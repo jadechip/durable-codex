@@ -1,11 +1,11 @@
 # Durable Codex
 
-<p align="center">
+<p>
   Serverless, Cloudflare-native runtime for persistent coding agents.<br/>
   Workers for the control plane. R2 for the workspace. Wasm and Dynamic Workers for the fast path. Sandboxes only when the task actually needs one.
 </p>
 
-<p align="center">
+<p>
   Build agents that feel like they own a real machine without paying the cost of putting every step in a container.
 </p>
 
