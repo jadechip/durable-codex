@@ -88,7 +88,7 @@ In practice, a file created by Wasm, Dynamic Worker Python, or a sandboxed shell
 ## Quick Start
 
 ```bash
-cd worker-app-server
+cd durable-codex
 npm install
 npm run build:wasm
 npm test
@@ -106,13 +106,14 @@ Then connect to the returned `websocketUrl`.
 ## Development
 
 ```bash
-cd worker-app-server
+cd durable-codex
 npm run build:wasm
 npm run check
 npm test
 npm run dev
 npm run demo
 npm run chat
+npm run exec -- "Run pwd"
 npm run tail
 ```
 
@@ -133,6 +134,34 @@ Manual commands:
 - `/rm <path>`
 - `/events on|off|raw`
 - `/exit`
+
+### One-Off CLI
+
+Run a single task and exit:
+
+```bash
+npm run exec -- "Run pwd"
+```
+
+Pipe a prompt from stdin:
+
+```bash
+printf '%s\n' "Summarize /workspace" | npm run exec --
+```
+
+Use a specific workspace or return the final turn JSON:
+
+```bash
+npm run exec -- --workspace repo-a "List /workspace recursively"
+npm run exec -- --json "Summarize the current workspace"
+```
+
+If you want a literal `codex exec` command locally, link the package first:
+
+```bash
+npm link
+codex exec "Run pwd"
+```
 
 ## Good Test Prompts
 
@@ -213,7 +242,7 @@ Defaults:
 ## Deploy
 
 ```bash
-cd worker-app-server
+cd durable-codex
 npm run deploy
 ```
 

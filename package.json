@@ -2,12 +2,17 @@
   "name": "durable-codex",
   "private": true,
   "type": "module",
+  "bin": {
+    "durable-codex": "./scripts/codex.mjs",
+    "codex": "./scripts/codex.mjs"
+  },
   "scripts": {
-    "check": "node --check src/index.js && node --check src/session-do.js && node --check src/workspace-kernel-do.js && node --check src/lib/apply-patch.js && node --check src/lib/command-parsing.js && node --check src/lib/command-registry.js && node --check src/lib/context-builder.js && node --check src/lib/dynamic-worker-driver.js && node --check src/lib/generated/worker-command-wasm.generated.js && node --check src/lib/jsonrpc.js && node --check src/lib/model-catalog.generated.js && node --check src/lib/model-catalog.js && node --check src/lib/model-client.js && node --check src/lib/protocol.js && node --check src/lib/sandbox-broker.js && node --check src/lib/sandbox-command-executor.js && node --check src/lib/session-engine.js && node --check src/lib/tool-router.js && node --check src/lib/tool-runtime.js && node --check src/lib/trace.js && node --check src/lib/turn-context.js && node --check src/lib/user-input.js && node --check src/lib/vfs-store.js && node --check src/lib/worker-command-driver.js && node --check src/lib/worker-command-wasm-runtime.js && node --check src/lib/workspace-kernel-client.js && node --check scripts/build-worker-wasm.mjs && node --check scripts/chat.mjs && node --check scripts/demo.mjs && node --check scripts/dev.mjs && node --check scripts/sync-upstream-model-catalog.mjs",
+    "check": "node --check src/index.js && node --check src/session-do.js && node --check src/workspace-kernel-do.js && node --check src/lib/apply-patch.js && node --check src/lib/command-parsing.js && node --check src/lib/command-registry.js && node --check src/lib/context-builder.js && node --check src/lib/dynamic-worker-driver.js && node --check src/lib/exec-cli.js && node --check src/lib/generated/worker-command-wasm.generated.js && node --check src/lib/jsonrpc.js && node --check src/lib/model-catalog.generated.js && node --check src/lib/model-catalog.js && node --check src/lib/model-client.js && node --check src/lib/protocol.js && node --check src/lib/sandbox-broker.js && node --check src/lib/sandbox-command-executor.js && node --check src/lib/session-engine.js && node --check src/lib/tool-router.js && node --check src/lib/tool-runtime.js && node --check src/lib/trace.js && node --check src/lib/turn-context.js && node --check src/lib/user-input.js && node --check src/lib/vfs-store.js && node --check src/lib/worker-command-driver.js && node --check src/lib/worker-command-wasm-runtime.js && node --check src/lib/workspace-kernel-client.js && node --check scripts/build-worker-wasm.mjs && node --check scripts/chat.mjs && node --check scripts/codex.mjs && node --check scripts/demo.mjs && node --check scripts/dev.mjs && node --check scripts/sync-upstream-model-catalog.mjs",
     "build:wasm": "node scripts/build-worker-wasm.mjs",
     "sync:models": "node scripts/sync-upstream-model-catalog.mjs",
     "test": "node --test test/*.test.js",
     "chat": "node scripts/chat.mjs",
+    "exec": "node scripts/codex.mjs exec",
     "demo": "node scripts/demo.mjs",
     "dev": "node scripts/dev.mjs",
     "deploy": "wrangler deploy --config wrangler.jsonc",
